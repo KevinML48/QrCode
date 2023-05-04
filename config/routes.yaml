@@ -1,0 +1,17 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+app_qr_code:
+    path: /qr-code/{url<https?://\S+>}
+    controller: App\Controller\QrCodeController::index
+
+api_qr:
+    path: /qr/{url<https?://\S+>}
+    controller: App\Controller\QrController::generateQrCode
+    methods: [POST]
+
+youtube_qr_code:
+    path: /youtube-qr-code
+    controller: App\Controller\YoutubeQRCodeController::generateQRCode
+
